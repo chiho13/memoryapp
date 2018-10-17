@@ -14,6 +14,11 @@ struct Concentration {
     private(set) var flipCount = 0
     private(set) var score = 0
     
+    private struct Points {
+        static let matchBonus = 2
+        static let missMatchPenalty = 1
+    }
+    
     private var indexofOneAndOnlyFaceUpCard: Int? {
         get {
             var foundIndex: Int?
@@ -44,6 +49,7 @@ struct Concentration {
                 if cards[matchIndex].identifier == cards[index].identifier {
                     cards[matchIndex].isMatched = true
                     cards[index].isMatched = true
+                    score += Points.matchBonus
                 }
                 
                 cards[index].isFaceUp = true

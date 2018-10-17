@@ -47,6 +47,7 @@ class ViewController: UIViewController {
             }
         }
         
+        scoreLabel.text = "Score: \(game.score)"
         flipCountLabel.text = "Flips: \(game.flipCount)"
     }
     
