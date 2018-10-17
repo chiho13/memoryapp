@@ -15,25 +15,26 @@ class ViewController: UIViewController {
     var numberOfPairsOfCards: Int {
         return cardButtons.count / 2
     }
-    
-    private(set) var flipCount = 0 {
-        didSet {
-           flipCountLabel.text = "Flips: \(flipCount)"
-        }
-    }
+
     
     @IBOutlet private weak var flipCountLabel: UILabel!
-    @IBOutlet private var cardButtons: [UIButton]!
+    @IBOutlet weak var scoreLabel: UILabel!
     
+    @IBOutlet private var cardButtons: [UIButton]!
+
     @IBAction private func touchCard(_ sender: UIButton) {
-        flipCount += 1
         if let cardNumber = cardButtons.index(of: sender) {
             game.chooseCard(at: cardNumber)
             updateViewFromModel()
         }
     }
     
-    private func updateViewFromModel(){
+    @IBAction private func startNewGame(_ sender: UIButton) {
+        game.resetGame()
+        updateViewFromModel()
+    }
+    
+    private func updateViewFromModel() {
         for index in cardButtons.indices {
             let button = cardButtons[index]
             let card = game.cards[index]
@@ -45,6 +46,8 @@ class ViewController: UIViewController {
                 button.backgroundColor = card.isMatched ? #colorLiteral(red: 0.9340934157, green: 0.5586755872, blue: 0.2195660472, alpha: 0) : #colorLiteral(red: 0.9333333333, green: 0.5568627451, blue: 0.2196078431, alpha: 1)
             }
         }
+        
+        flipCountLabel.text = "Flips: \(game.flipCount)"
     }
     
     private var emojiChoices = ["👻", "🎃", "🕷", "😱"]
