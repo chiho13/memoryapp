@@ -13,6 +13,7 @@ struct Concentration {
     
     private(set) var flipCount = 0
     private(set) var score = 0
+    private var seenCards: Set<Int> = []
     
     private struct Points {
         static let matchBonus = 2
@@ -50,6 +51,13 @@ struct Concentration {
                     cards[matchIndex].isMatched = true
                     cards[index].isMatched = true
                     score += Points.matchBonus
+                } else {
+                    if seenCards.contains(index), seenCards.contains(matchIndex)  {
+                        score -= Points.missMatchPenalty
+                    }
+                    
+                    seenCards.insert(index)
+                    seenCards.insert(matchIndex)
                 }
                 
                 cards[index].isFaceUp = true
@@ -62,10 +70,13 @@ struct Concentration {
     
     mutating func resetGame() {
         flipCount = 0
+        score = 0
+        seenCards = []
         for index in cards.indices  {
             cards[index].isFaceUp = false
             cards[index].isMatched = false
         }
+        shuffleCards()
     }
     
     mutating func shuffleCards() {
