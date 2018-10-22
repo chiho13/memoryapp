@@ -14,6 +14,7 @@
 		A447402F216144080067E2C7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A447402D216144080067E2C7 /* LaunchScreen.storyboard */; };
 		A4474038216936E90067E2C7 /* Concentration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4474037216936E90067E2C7 /* Concentration.swift */; };
 		A447403A216937B80067E2C7 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4474039216937B80067E2C7 /* Card.swift */; };
+		C6843D1F217E0C010082AED6 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6843D1E217E0C010082AED6 /* Theme.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		A4474030216144080067E2C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A4474037216936E90067E2C7 /* Concentration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Concentration.swift; sourceTree = "<group>"; };
 		A4474039216937B80067E2C7 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		C6843D1E217E0C010082AED6 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 			children = (
 				A4474036216145460067E2C7 /* Supporting Files */,
 				A4474026216144040067E2C7 /* ViewController.swift */,
+				C6843D1E217E0C010082AED6 /* Theme.swift */,
 				A4474028216144040067E2C7 /* Main.storyboard */,
 				A4474037216936E90067E2C7 /* Concentration.swift */,
 				A4474039216937B80067E2C7 /* Card.swift */,
@@ -151,6 +154,7 @@
 			files = (
 				A4474027216144040067E2C7 /* ViewController.swift in Sources */,
 				A4474025216144040067E2C7 /* AppDelegate.swift in Sources */,
+				C6843D1F217E0C010082AED6 /* Theme.swift in Sources */,
 				A4474038216936E90067E2C7 /* Concentration.swift in Sources */,
 				A447403A216937B80067E2C7 /* Card.swift in Sources */,
 			);
