@@ -16,13 +16,6 @@ class ViewController: UIViewController {
         return cardButtons.count / 2
     }
     
-    private struct Theme {
-        var name: String
-        var emojis: [String]
-        var viewColor: UIColor
-        var cardColor: UIColor
-    }
-    
     @IBOutlet private weak var flipCountLabel: UILabel!
     @IBOutlet weak var scoreLabel: UILabel!
     
@@ -58,7 +51,7 @@ class ViewController: UIViewController {
                 button.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
             } else {
                 button.setTitle("", for: UIControlState.normal)
-                button.backgroundColor = card.isMatched ? #colorLiteral(red: 0.9340934157, green: 0.5586755872, blue: 0.2195660472, alpha: 0) : #colorLiteral(red: 0.9333333333, green: 0.5568627451, blue: 0.2196078431, alpha: 1)
+                button.backgroundColor = card.isMatched ? #colorLiteral(red: 0.9340934157, green: 0.5586755872, blue: 0.2195660472, alpha: 0) : cardBackColor
             }
         }
         
